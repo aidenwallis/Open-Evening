@@ -1,0 +1,122 @@
+body {
+	font-family:'Open Sans', sans-serif;
+	transition:background 1s ease;
+	&.pageLoaded #preload #preload-inner .circular .path {
+		stroke:#FFF;
+	} &.tourTime {
+		background:#970232;
+	}
+} #preload {
+	#preload-inner {
+		width:300px;
+		height:300px;
+		margin:auto;
+		position:relative;
+	}
+	img {
+		width:auto;
+		padding:80px;
+		height:300px;
+		display:block;
+		margin:auto;
+	} .circular {
+		animation:rotate 2s linear infinite;
+		height:100%;
+		transform-origin:center center;
+		width:100%;
+		position:absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		margin:auto;
+		.path {
+			stroke-dasharray:1, 200;
+			stroke-dashoffset:0;
+			stroke:#810329;
+			transition:stroke .4s ease;
+			animation:dash 2s ease-in-out infinite;
+			stroke-linecap:round;
+		}
+	}
+} #app {
+	position:absolute;
+	width:100vw;
+	height:100vh;
+	z-index:1;
+} .centerall {
+	width:100vw;
+	height:100vh;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:3;
+	display:flex;
+	align-content:center;
+	transition:opacity .4s ease;
+	justify-content:center;
+	overflow:hidden;
+	.centerInner {
+		margin:auto;
+		position:relative;
+	}
+} #welcomeInner {
+	max-width:500px;
+	text-align:center;
+	width:100%;
+	animation:welcomeHigher 1s ease;
+	height:233px;
+} .tourHold {
+	padding:20px 15px;
+	&.foldOut {
+		.tourInstructions {
+			&:before {
+				animation:boxFoldOut 1s ease;
+			}
+		}
+	} .tourInstructions {
+		position:relative;
+		margin-top:20px;
+		height:650px;
+		&:before {
+			width:100%;
+			height:100%;
+			top:50%;
+			transform:translateY(-50%);
+			background:#FFF;
+			content:' ';
+			position:absolute;
+			z-index:-1;
+			box-shadow:0 10px 25px rgba(0, 0, 0, .1);
+		}
+	}
+}
+
+@keyframes rotate {
+	100% {
+		transform:rotate(360deg);
+	}
+} @keyframes dash {
+	0% {
+		stroke-dasharray:1, 200;
+		stroke-dashoffset:0;
+	} 50% {
+		stroke-dasharray:89, 200;
+		stroke-dashoffset:-35px;
+	} 100% {
+		stroke-dasharray:89, 200;
+		stroke-dashoffset:-124px;
+	}
+} @keyframes welcomeHigher {
+	from {
+		height:140px;
+	} to {
+		height:233px;
+	}
+} @keyframes boxFoldOut {
+	from {
+		height:0;
+	} to {
+		height:100%;
+	}
+}
