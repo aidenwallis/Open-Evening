@@ -1,6 +1,7 @@
 body {
 	font-family:'Open Sans', sans-serif;
 	transition:background 1s ease;
+	overflow:hidden;
 	&.pageLoaded #preload #preload-inner .circular .path {
 		stroke:#FFF;
 	} &.tourTime {
@@ -70,26 +71,38 @@ body {
 	padding:20px 15px;
 	&.foldOut {
 		.tourInstructions {
+			background:transparent;
+			box-shadow:none;
 			&:before {
 				animation:boxFoldOut 1s ease;
+				width:100%;
+				height:100%;
+				top:50%;
+				transform:translateY(-50%);
+				background:#FFF;
+				content:' ';
+				position:absolute;
+				z-index:-1;
+				box-shadow:0 10px 25px rgba(0, 0, 0, .1);
 			}
 		}
 	} .tourInstructions {
+		background:#FFF;
+		box-shadow:0 10px 25px rgba(0, 0, 0, .1);
 		position:relative;
 		margin-top:20px;
 		height:650px;
-		&:before {
-			width:100%;
-			height:100%;
-			top:50%;
-			transform:translateY(-50%);
-			background:#FFF;
-			content:' ';
-			position:absolute;
-			z-index:-1;
-			box-shadow:0 10px 25px rgba(0, 0, 0, .1);
+		overflow:auto;
+		.tourInner {
+			padding:15px;
 		}
 	}
+} .madeby {
+	color:#FDE632;
+	margin-top:12px;
+	font-size:1.2rem;
+} p {
+	font-family:'proxima-nova', 'Open Sans', sans-serif;
 }
 
 @keyframes rotate {
