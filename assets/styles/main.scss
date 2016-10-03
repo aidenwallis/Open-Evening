@@ -1,4 +1,13 @@
-body {
+html {
+	transition:opacity 1s ease;
+	&.backhome {
+		opacity:0;
+		pointer-events:none;
+		body {
+			background:#FFF;
+		}
+	}
+} body {
 	font-family:'Open Sans', sans-serif;
 	transition:background 1s ease;
 	overflow:hidden;
@@ -100,9 +109,17 @@ body {
 } .madeby {
 	color:#FDE632;
 	margin-top:12px;
-	font-size:1.2rem;
-} p {
+	font-size:1.5rem;
+} p, input, button {
 	font-family:'proxima-nova', 'Open Sans', sans-serif;
+} p {
+	font-size:16px;
+} .nextBtn {
+	color:#FDE632 !important;
+	background:transparent !important;
+	margin-top:10px;
+	outline:none;
+	font-size:1.8em;
 }
 
 @keyframes rotate {

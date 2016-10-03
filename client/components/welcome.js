@@ -15,6 +15,7 @@ class Welcome extends React.Component {
 					browserHistory.push('/start')
 				}, 1000)
 			}
+			return false;
 		}
 	}
 
