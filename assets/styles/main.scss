@@ -120,6 +120,12 @@ html {
 	margin-top:10px;
 	outline:none;
 	font-size:1.8em;
+} #lock {
+	display:none;
+	z-index:10;
+	background:#FFF;
+} .locked #lock {
+	display:flex;
 }
 
 @keyframes rotate {
@@ -137,6 +143,8 @@ html {
 		stroke-dasharray:89, 200;
 		stroke-dashoffset:-124px;
 	}
+} .welcomeText {
+	font-size:2rem;
 } @keyframes welcomeHigher {
 	from {
 		height:140px;

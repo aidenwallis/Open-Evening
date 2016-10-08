@@ -17,12 +17,18 @@ class Y7 extends React.Component {
 				document.documentElement.className = 'backhome'
 				setTimeout(() => {
 					location.href = '/'
+					window.socket.emit('manualReset')
 				}, 1100)
 			}
 		}
-	}
 
-	onClick() {
+		setTimeout(() => {
+			document.documentElement.className = 'backhome'
+			setTimeout(() => {
+				location.href = '/'
+				window.socket.emit('autoReset')
+			}, 1100)
+		}, 300000)
 
 	}
 

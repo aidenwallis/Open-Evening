@@ -26,7 +26,7 @@ class Welcome extends React.Component {
 					<img src="/assets/images/logo.png" height="140" draggable="false" className="center-block" />
 					<div className="welcome-block" />
 					<h2 className="animated fadeInUp">Welcome to TWGSB Open Evening</h2>
-					<p className="animate fadeInUp">(Press "Enter" to begin)</p>
+					<p className="animate fadeInUp welcomeText"><strong>(Press "Enter" to view the Year 7 curriculum)</strong></p>
 				</div>
 			</div>
 		)

@@ -13,6 +13,7 @@ class Start extends React.Component {
 		}, 2000)
 		setTimeout(() => {
 			browserHistory.push('/tour/y7')
+			window.socket.emit('toY7')
 		}, 3000)
 	}
 
